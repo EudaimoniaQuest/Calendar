@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Weekly Planner</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="manifest" href="manifest.json">
+  <script>
+    if ('serviceWorker' in navigator) {
+      navigator.serviceWorker.register('service-worker.js');
+    }
+  </script>
+  <style>
+    body { font-family: sans-serif; background: #f0f0f0; padding: 10px; }
+    h1 { text-align: center; }
+    .planner-grid { display: grid; grid-template-columns: repeat(6, 1fr); gap: 5px; }
+    .cell { background: white; padding: 10px; border: 1px solid #ccc; cursor: pointer; min-height: 50px; }
+    .header { font-weight: bold; text-align: center; }
+  </style>
+</head>
+<body>
+<h1>Weekly Planner (PWA)</h1>
+<div class="planner-grid" id="plannerGrid"></div>
+<script src="planner.js"></script>
+</body>
+</html>
